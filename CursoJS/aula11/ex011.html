@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfandega</title>
+</head>
+
+
+<body>
+    <h1>Sistema de perguntas à viajantes</h1>
+    País onde mora: <input type="text" name="txtvel" value="" placeholder="Seu país" id="pais">
+    <input type="button" value="Enviar" onclick="informa()">
+    <div id="firstBody">
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    function informa() {
+        var txtv = document.getElementById("pais").value.toUpperCase()
+        var firstBody = window.document.querySelector("div#firstBody")
+        firstBody.innerHTML = `<p>O país que você mora é o ${txtv}</p>`
+
+
+        if (txtv != 'BRASIL') {
+            firstBody.innerHTML += `<p>Você é estrangeiro</p>`
+        } else {
+            firstBody.innerHTML += `<p>Você é Brasileiro</p>`
+        }
+    }
+</script>
